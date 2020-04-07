@@ -1,41 +1,55 @@
-// M.AutoInit();
-// var slider = document.getElementById('test-slider');
-// noUiSlider.create(slider, {
-//     start: [20, 80],
-//     connect: true,
-//     step: 1,
-//     orientation: 'horizontal', // 'horizontal' or 'vertical'
-//     range: {
-//         'min': 0,
-//         'max': 100
-//     },
-//     format: wNumb({
-//         decimals: 0
-//     })
-// });
 
 $(document).ready(function () {
   $("select").formSelect();
   var slider = document.getElementById("slider");
 
   noUiSlider.create(slider, {
-    start: [20, 80],
+    start: [5, 25],
     connect: true,
     range: {
-      min: 0,
-      max: 100,
+      min: 0.5,
+      max: 55,
     },
   });
+console.log(slider);
 
 
 
+$('.btn').on('click', function(event){
+  event.preventDefault();
 
+  var abv_gt;
+  var abv_lt;
 
+  var ibu_gt;
+  var ibu_lt;
 
+  var ebc_gt;
+  var ebc_lt;
 
+  var queryURL = "https://api.punkapi.com/v2/beers/?abv_gt=" + abv_gt;
+
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function (response) {
+    console.log(response);
+    var beerPic = $("<img>");
+    beerPic.attr("src", response[0].image_url);
+    beerPic.attr("alt", "beer");
+    $("#beer-pic").append(beerPic);
+    beerPic.attr("style", "height: 200px");
+
+  });
+
+})
 
 
 });
+
+
+
+
 
 
 
