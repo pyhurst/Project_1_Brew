@@ -9,35 +9,37 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.0.2/nouislider.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.0.3/nouislider.js"></script>
     <title>BrewDog</title>
   </head>
   <body>
     <header>
-      <h1>To Beer Or Not To Beer</h1>
+      <h1><i class="fas fa-beer"></i>To Beer Or Not To Beer</h1>
     </header>
     <div class="container">
       <div class="row">
-        <div id="beer-input" class="col s3">
+        <div id="beer-input" class="col s4">
 
           <form id="beer-input">
               <h2>What's your type?</h2>
-            <h3>Alcohol Percentage</h3>
+            <h4>Alcohol Content</h4>
             <div id="slider"></div>
-            <h3>Shades</h3>
+            <h4>Color</h4>
             <div class="input-field col s12">
               <select>
-                <option value="" disabled selected>Choose your option</option>
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-                <option value="4">Option 4</option>
+                <option value="" disabled selected>Choose your beer shade</option>
+                <option id="color1" value="1">Pale Straw</option>
+                <option id="color2" value="2">Gold</option>
+                <option id="color3" value="3">Amber</option>
+                <option id="color4" value="4">Deep Brown</option>
+                <option id="color5" value="5">Black</option>
               </select>
-              <label>Materialize Select</label>
+              
             </div>
 
             <p>
-                <h3>Bitterness</h3>
+                <h4>Bitterness</h4>
               <label>
                 <input
                   id="light"
@@ -45,7 +47,7 @@
                   class="filled-in"
                   checked="checked"
                 />
-                <span>Filled in</span>
+                <span>Light/No Hop flavor</span>
               </label>
               <label>
                 <input
@@ -54,7 +56,7 @@
                   class="filled-in"
                   checked="checked"
                 />
-                <span>Filled in</span>
+                <span>Medium Hop flavor</span>
               </label>
               <label>
                 <input
@@ -63,12 +65,12 @@
                   class="filled-in"
                   checked="checked"
                 />
-                <span>Filled in</span>
+                <span>Strong hop flavor</span>
               </label>
             </p>
           </form>
         </div>
-        <div class="col s9" id="beer-display">
+        <div class="col s8" id="beer-display">
             <h2>Our Suggestion:</h2>
             <div>
                 <img src="" alt="">

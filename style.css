@@ -1,7 +1,53 @@
+/* universal */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* Heading */
+header {
+  
+  text-align: center;
+  background-color: rgb(230, 193, 60);
 
+}
+
+header h1 {
+  padding: 1em;
+  color: white;
+  text-shadow: 1px 2px 3px rgb(209, 164, 0);
+}
+
+/* beer info input div */
+#beer-input {
+  text-align: left;
+}
+
+h2 {
+  color: rgb(230, 193, 60);
+}
+
+
+
+
+
+/* slider */
+div.noUi-connect {
+  background-color: rgb(209, 164, 0);
+}
+
+/* color shades */
+.input-field li span {
+  color: black;
+}
+
+.input-field li #color1 {
+  background-color: rgb(255, 240, 102);
+}
+
+/* beer display */
+#beer-display {
+  /* border: 1px dotted wheat; */
+  text-align: end;
+}
