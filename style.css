@@ -7,16 +7,16 @@
 
 /* Heading */
 header {
-  
   text-align: center;
   background-color: rgb(230, 193, 60);
-
-}
-
-header h1 {
+  font-family: 'Cinzel', serif;
   padding: 1em;
   color: white;
   text-shadow: 1px 2px 3px rgb(209, 164, 0);
+}
+
+header p {
+  font-size: 2em;
 }
 
 /* beer info input div */
@@ -25,11 +25,10 @@ header h1 {
 }
 
 h2 {
+  font-size: 2em;
+  font-family: 'Cinzel', serif;
   color: rgb(230, 193, 60);
 }
-
-
-
 
 
 /* slider */
@@ -44,6 +43,11 @@ div.noUi-connect {
 
 .input-field li #color1 {
   background-color: rgb(255, 240, 102);
+}
+
+/* checkboxes */
+ .filled-in {
+  background-color: hotpink;
 }
 
 /* beer display */
