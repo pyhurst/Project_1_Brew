@@ -1,15 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./materialize-css/materialize.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.0.2/nouislider.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.0.3/nouislider.js"></script>
     <title>BrewDog</title>
-</head>
-<body>
-    
+  </head>
+  <body>
+    <header>
+      <h1>To Beer Or Not To Beer</h1>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div id="beer-input" class="col s3">
 
-    <script src='./script.js'></script>
-</body>
+          <form id="beer-input">
+              <h2>What's your type?</h2>
+            <h3>Alcohol Percentage</h3>
+            <div id="slider"></div>
+            <h3>Shades</h3>
+            <div class="input-field col s12">
+              <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+              </select>
+              <label>Materialize Select</label>
+            </div>
+
+            <p>
+                <h3>Bitterness</h3>
+              <label>
+                <input
+                  id="light"
+                  type="checkbox"
+                  class="filled-in"
+                  checked="checked"
+                />
+                <span>Filled in</span>
+              </label>
+              <label>
+                <input
+                  id="medium"
+                  type="checkbox"
+                  class="filled-in"
+                  checked="checked"
+                />
+                <span>Filled in</span>
+              </label>
+              <label>
+                <input
+                  id="strong"
+                  type="checkbox"
+                  class="filled-in"
+                  checked="checked"
+                />
+                <span>Filled in</span>
+              </label>
+            </p>
+          </form>
+        </div>
+        <div class="col s9" id="beer-display">
+            <h2>Our Suggestion:</h2>
+            <div>
+                <img src="" alt="">
+            </div>
+            
+        </div>
+      </div>
+      <div class="row">
+          <div class="col s12" id="food-display">
+              <h2>Food pairing: </h2>
+          </div>
+
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="materialize-js/materialize.min.js"></script>
+
+    <script src="./script.js"></script>
+  </body>
 </html>
