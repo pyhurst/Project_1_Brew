@@ -27,15 +27,40 @@ $(document).ready(function () {
     },
   });
 
+  function renderFood() {
+    var appId = '1efc5cb5';
+    var appKey = 'b93713d669042a8117816b234a336ee5';
+    var foodInput = 'pizza';
+    var queryURL = `https://api.edamam.com/api/food-database/parser?ingr=${foodInput}&app_id=${appId}&app_key=${appKey}`;
+  
+    $.ajax({
+      url: queryURL,
+      method: 'GET'
+    }).then(function(res){
+      // console.log(res);
+      // console.log(res.hints[0]);
+      // console.log(res.hints[0].food.label);
+      // console.log(res.hints[0].food.image);
+  
+      var $div = $('<div>');
+      var label = $('<h4>').text(res.hints[0].food.label);
+      var imgURL = res.hints[0].food.image;
+      var img = $('<img>').attr('src', imgURL);
+  
+      $div.append(img);
+      $('#food-display').append(label);
+      $('#food-display').append($div);
+  
+    });
+  }
 
-
-
-
+  renderFood();
 
 
 
 
 });
+
 
 
 
