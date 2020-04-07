@@ -51,7 +51,7 @@ div.noUi-connect {
 }
 
 /* beer display */
-#beer-display {
+#beer-display h2 {
   /* border: 1px dotted wheat; */
   text-align: end;
 }
