@@ -19,13 +19,21 @@ console.log(slider);
 $('.btn').on('click', function(event){
   event.preventDefault();
   //alcohol slider
-  var abv_get = $('.noUi-handle').attr('aria-valuemin').val();
-  // var abv_lt = $('.noUi-handle').attr('aria-valuemax').val();
-
+  var abv_get = $('.noUi-handle-lower').attr('aria-valuenow');
+  var abv_lt = $('.noUi-handle-upper').attr('aria-valuenow');
 
   //shades dropdown
-  var ebc_gt;
-  var ebc_lt;
+
+
+var colorChoice = $('.dropdown-trigger').val();
+console.log(colorChoice);
+var ebc_gt = $(colorChoice).attr("data-min");
+var ebc_lt = $(colorChoice).attr("data-max");
+console.log(ebc_gt);
+console.log(ebc_lt);
+
+
+
 
 
   //bitterness checkboxes
@@ -34,8 +42,8 @@ $('.btn').on('click', function(event){
 
 
  
-  var queryURL = "https://api.punkapi.com/v2/beers/?abv_gt="+abv_get; 
-
+  var queryURL = "https://api.punkapi.com/v2/beers/?abv_gt="+abv_get+"&abv_lt="+abv_lt; 
+  // +"&ebc_gt=" + ebc_gt
   $.ajax({
     url: queryURL,
     method: "GET"
@@ -50,6 +58,20 @@ $('.btn').on('click', function(event){
   });
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+//===========================================================================
   // Renders food response from BrewDog API to page
   function renderFood() {
     var appId = '1efc5cb5';
