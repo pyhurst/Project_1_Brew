@@ -77,6 +77,7 @@ var ibu_lt;
     method: "GET"
   }).then(function (response) {
     console.log(response);
+    
     var beerPic = $("<img>");
     beerPic.attr("src", response[0].image_url);
     beerPic.attr("alt", "beer");

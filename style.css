@@ -67,8 +67,6 @@ div.noUi-connect {
 
 
 
-
-
 /* checkboxes */
 [type="checkbox"].filled-in:checked+span:not(.lever):after {
   border-color: rgb(255, 114, 38);
@@ -83,4 +81,32 @@ div.noUi-connect {
 
 .btn {
   background-color: rgb(255, 114, 38);
+}
+
+
+@media only screen and (max-width: 600px) {
+  
+#beer-input {
+  width: 100%;
+  text-align: center;
+}
+
+#beer-display {
+  width: 100%;
+  text-align: center;
+}
+
+#beer-display h2 {
+  /* border: 1px dotted wheat; */
+  text-align: left;
+}
+
+#food-display {
+  width: 100%;
+}
+
+#dessert-display {
+  width: 100%;
+}
+
 }
