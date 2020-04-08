@@ -1,4 +1,7 @@
 
+// Initialize AOS
+AOS.init();
+
 $(document).ready(function () {
   $("select").formSelect();
   var slider = document.getElementById("slider");
@@ -13,11 +16,63 @@ $(document).ready(function () {
   });
 console.log(slider);
 
+  // Renders food response from BrewDog API to page
+  function renderFood() {
+    var appId = '1efc5cb5';
+    var appKey = 'b93713d669042a8117816b234a336ee5';
+    var foodInput = 'pizza';
+    var queryURL = `https://api.edamam.com/api/food-database/parser?ingr=${foodInput}&app_id=${appId}&app_key=${appKey}`;
+  
+    $.ajax({
+      url: queryURL,
+      method: 'GET'
+    }).then(function(res){
+      // console.log(res);
+      var $cardDiv = $('<div>');
+      var $cardImg = $('<div>');
+      var $cardContent = $('<div>');
+      var label = $('<h4>').text(res.hints[0].food.label);
+      var imgURL = res.hints[0].food.image;
+      var img = $('<img>').attr('src', imgURL);
 
+      $cardDiv.addClass('card');
+      $cardImg.addClass('card-image');
+      // Adds AOS animation to the card
+      $cardDiv.attr('data-aos', 'fade-right');
+      $cardDiv.attr('data-aos-offset', '300');
+      $cardDiv.attr('data-aos-duration', '2000');
+      // img.addClass('activator');
+  
+      // Append divs to page
+      $cardDiv.append($cardImg);
+      $cardDiv.append($cardContent);
+      $cardImg.append(img);
+      $cardContent.append(label);
+      $('#food-display').append($cardDiv);
+    });
+  }
 
 $('.btn').on('click', function(event){
   event.preventDefault();
+  renderFood();
 
+  // Renders dessert response from BrewDog API to page
+  function renderDessert() {
+    var appId = '1efc5cb5';
+    var appKey = 'b93713d669042a8117816b234a336ee5';
+    var dessertInput = 'ice cream';
+    var queryURL = `https://api.edamam.com/api/food-database/parser?ingr=${dessertInput}&app_id=${appId}&app_key=${appKey}`;
+  
+    $.ajax({
+      url: queryURL,
+      method: 'GET'
+    }).then(function(res){
+      var $cardDiv = $('<div>');
+      var $cardImg = $('<div>');
+      var $cardContent = $('<div>');
+      var label = $('<h4>').text(res.hints[0].food.label);
+      var imgURL = res.hints[0].food.image;
+      var img = $('<img>').attr('src', imgURL);
 
   //alcohol slider
   var abv_get = $('.noUi-handle').attr('aria-valuemin').val();
@@ -52,6 +107,24 @@ $('.btn').on('click', function(event){
 
 })
 
+      $cardDiv.addClass('card');
+      $cardImg.addClass('card-image');
+      // Adds AOS animation to the card
+      $cardDiv.attr('data-aos', 'fade-left');
+      $cardDiv.attr('data-aos-offset', '300');
+      $cardDiv.attr('data-aos-duration', '2000');
+      // img.addClass('activator');
+  
+      // Append divs to page
+      $cardDiv.append($cardImg);
+      $cardDiv.append($cardContent);
+      $cardImg.append(img);
+      $cardContent.append(label);
+      $('#dessert-display').append($cardDiv);
+    });
+  }
+
+  renderDessert();
 
 });
 
