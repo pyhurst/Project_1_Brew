@@ -1,18 +1,3 @@
-// M.AutoInit();
-// var slider = document.getElementById('test-slider');
-// noUiSlider.create(slider, {
-//     start: [20, 80],
-//     connect: true,
-//     step: 1,
-//     orientation: 'horizontal', // 'horizontal' or 'vertical'
-//     range: {
-//         'min': 0,
-//         'max': 100
-//     },
-//     format: wNumb({
-//         decimals: 0
-//     })
-// });
 
 // Initialize AOS
 AOS.init();
@@ -22,13 +7,14 @@ $(document).ready(function () {
   var slider = document.getElementById("slider");
 
   noUiSlider.create(slider, {
-    start: [20, 80],
+    start: [5, 25],
     connect: true,
     range: {
-      min: 0,
-      max: 100,
+      min: 0.5,
+      max: 55,
     },
   });
+console.log(slider);
 
   // Renders food response from BrewDog API to page
   function renderFood() {
@@ -66,6 +52,8 @@ $(document).ready(function () {
     });
   }
 
+$('.btn').on('click', function(event){
+  event.preventDefault();
   renderFood();
 
   // Renders dessert response from BrewDog API to page
@@ -85,6 +73,39 @@ $(document).ready(function () {
       var label = $('<h4>').text(res.hints[0].food.label);
       var imgURL = res.hints[0].food.image;
       var img = $('<img>').attr('src', imgURL);
+
+  //alcohol slider
+  var abv_get = $('.noUi-handle').attr('aria-valuemin').val();
+  // var abv_lt = $('.noUi-handle').attr('aria-valuemax').val();
+
+
+  //shades dropdown
+  var ebc_gt;
+  var ebc_lt;
+
+
+  //bitterness checkboxes
+  var ibu_gt;
+  var ibu_lt;
+
+
+ 
+  var queryURL = "https://api.punkapi.com/v2/beers/?abv_gt="+abv_get; 
+
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function (response) {
+    console.log(response);
+    var beerPic = $("<img>");
+    beerPic.attr("src", response[0].image_url);
+    beerPic.attr("alt", "beer");
+    $("#beer-pic").append(beerPic);
+    beerPic.attr("style", "height: 200px");
+
+  });
+
+})
 
       $cardDiv.addClass('card');
       $cardImg.addClass('card-image');
@@ -106,6 +127,9 @@ $(document).ready(function () {
   renderDessert();
 
 });
+
+
+
 
 
 
