@@ -3,16 +3,17 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Bebas Neue', cursive;
 }
 
 /* Heading */
 header {
   text-align: center;
-  background-color: rgb(230, 193, 60);
-  font-family: 'Cinzel', serif;
+  background-image: url(https://images.photowall.com/products/45025/beer.jpg?h=699&q=85);
+  font-family: 'Bebas Neue', cursive;
   padding: 1em;
   color: white;
-  text-shadow: 1px 2px 3px rgb(209, 164, 0);
+  text-shadow: 1px 2px 3px rgb(138, 101, 0);
 }
 
 header p {
@@ -25,29 +26,41 @@ header p {
 }
 
 h2 {
-  font-size: 2em;
-  font-family: 'Cinzel', serif;
-  color: rgb(230, 193, 60);
+  font-family: 'Bebas Neue', cursive;
+  color: rgb(255, 168, 38);
+  text-shadow: 1px 2px 3px rgb(138, 101, 0);
 }
 
-
+h4 {
+  color: rgb(255, 114, 38);
+  font-family: 'Bebas Neue', cursive;
+}
 /* slider */
 div.noUi-connect {
-  background-color: rgb(209, 164, 0);
+  background-color: rgb(255, 168, 38);
 }
 
 /* color shades */
+
+
 .input-field li span {
   color: black;
 }
 
 .input-field li #color1 {
-  background-color: rgb(255, 240, 102);
+  background-color: rgb(255, 168, 38);
 }
 
+.select-wrapper input.select-dropdown {
+  font-family: 'Bebas Neue', cursive;
+}
+
+
+
 /* checkboxes */
- .filled-in {
-  background-color: hotpink;
+[type="checkbox"].filled-in:checked+span:not(.lever):after {
+  border-color: rgb(255, 114, 38);
+  background-color: wheat;
 }
 
 /* beer display */
