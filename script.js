@@ -13,6 +13,7 @@
 //         decimals: 0
 //     })
 // });
+AOS.init();
 
 $(document).ready(function () {
   $("select").formSelect();
@@ -38,26 +39,63 @@ $(document).ready(function () {
       method: 'GET'
     }).then(function(res){
       // console.log(res);
-      // console.log(res.hints[0]);
-      // console.log(res.hints[0].food.label);
-      // console.log(res.hints[0].food.image);
-  
-      var $div = $('<div>');
+      var $cardDiv = $('<div>');
+      var $cardImg = $('<div>');
+      var $cardContent = $('<div>');
       var label = $('<h4>').text(res.hints[0].food.label);
       var imgURL = res.hints[0].food.image;
       var img = $('<img>').attr('src', imgURL);
+
+      $cardDiv.addClass('card');
+      $cardImg.addClass('card-image');
+      $cardDiv.attr('data-aos', 'fade-right');
+      $cardDiv.attr('data-aos-offset', '300');
+      $cardDiv.attr('data-aos-duration', '2000');
+      // img.addClass('activator');
   
-      $div.append(img);
-      $('#food-display').append(label);
-      $('#food-display').append($div);
-  
+      $cardDiv.append($cardImg);
+      $cardDiv.append($cardContent);
+      $cardImg.append(img);
+      $cardContent.append(label);
+      $('#food-display').append($cardDiv);
     });
   }
 
   renderFood();
 
+  function renderDessert() {
+    var appId = '1efc5cb5';
+    var appKey = 'b93713d669042a8117816b234a336ee5';
+    var dessertInput = 'ice cream';
+    var queryURL = `https://api.edamam.com/api/food-database/parser?ingr=${dessertInput}&app_id=${appId}&app_key=${appKey}`;
+  
+    $.ajax({
+      url: queryURL,
+      method: 'GET'
+    }).then(function(res){
+      var $cardDiv = $('<div>');
+      var $cardImg = $('<div>');
+      var $cardContent = $('<div>');
+      var label = $('<h4>').text(res.hints[0].food.label);
+      var imgURL = res.hints[0].food.image;
+      var img = $('<img>').attr('src', imgURL);
 
+      $cardDiv.addClass('card');
+      $cardImg.addClass('card-image');
+      $cardDiv.attr('data-aos', 'fade-left');
+      $cardDiv.attr('data-aos-offset', '300');
+      $cardDiv.attr('data-aos-duration', '2000');
+      // img.addClass('activator');
+  
+      $cardDiv.append($cardImg);
+      $cardDiv.append($cardContent);
+      $cardImg.append(img);
+      $cardContent.append(label);
+      $('#dessert-display').append($cardDiv);
+    });
+  }
 
+  renderDessert();
 
 });
 

@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.0.3/nouislider.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>BrewDog</title>
   </head>
   <body>
@@ -77,9 +78,10 @@
         </div>
       </div>
       <div class="row">
-          <div class="col s12" id="food-display">
-              <h2>Food pairing: </h2>
-          </div>
+        <h2>Food pairing: </h2>
+          <div class="col s6" id="food-display"></div>
+          <div class="col s6" id="dessert-display"></div>
+      </div>
 
       </div>
     </div>
@@ -90,7 +92,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="materialize-js/materialize.min.js"></script>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
