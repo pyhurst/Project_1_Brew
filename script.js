@@ -19,30 +19,45 @@ console.log(slider);
 $('.btn').on('click', function(event){
   event.preventDefault();
   //alcohol slider
-  var abv_get = $('.noUi-handle-lower').attr('aria-valuenow');
-  var abv_lt = $('.noUi-handle-upper').attr('aria-valuenow');
-
+var abv_get = $('.noUi-handle-lower').attr('aria-valuenow');//lower handle
+var abv_lt = $('.noUi-handle-upper').attr('aria-valuenow');//upper handle
+console.log(abv_get);
+console.log(abv_lt);
   //shades dropdown
-
-
 var colorChoice = $('.dropdown-trigger').val();
-console.log(colorChoice);
-var ebc_gt = $(colorChoice).attr("data-min");
-var ebc_lt = $(colorChoice).attr("data-max");
+
+  console.log(colorChoice);
+if(colorChoice === "Pale Straw") {
+  var ebc_gt = $('#color1').attr("data-min");
+  var ebc_lt = $('#color1').attr("data-max");
+} else if(colorChoice === "Gold") {
+  var ebc_gt = $('#color2').attr("data-min");
+  var ebc_lt = $('#color2').attr("data-max");
+} else if(colorChoice === "Amber") {
+  var ebc_gt = $('#color3').attr("data-min");
+  var ebc_lt = $('#color3').attr("data-max");
+} else if (colorChoice === "Deep Brown") {
+  var ebc_gt = $('#color4').attr("data-min");
+  var ebc_lt = $('#color4').attr("data-max");
+} else if (colorChoice === "Black") {
+  var ebc_gt = $('#color5').attr("data-min");
+  var ebc_lt = $('#color5').attr("data-max");
+}
+
+ebc_gt = parseInt(ebc_gt);
+ebc_lt = parseInt(ebc_lt);
 console.log(ebc_gt);
 console.log(ebc_lt);
 
 
 
+//bitterness checkboxes
+var ibu_gt;
+var ibu_lt;
 
-
-  //bitterness checkboxes
-  var ibu_gt;
-  var ibu_lt;
-
-
+  +"&ebc_gt=" + ebc_gt + "&ebc_lt=" + ebc_lt
  
-  var queryURL = "https://api.punkapi.com/v2/beers/?abv_gt="+abv_get+"&abv_lt="+abv_lt; 
+  var queryURL = "https://api.punkapi.com/v2/beers/?abv_gt=" + abv_get + "&abv_lt=" + abv_lt + "&ebc_gt=" + ebc_gt + "&ebc_lt=" + ebc_lt; 
   // +"&ebc_gt=" + ebc_gt
   $.ajax({
     url: queryURL,
