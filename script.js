@@ -27,13 +27,6 @@ $('.noUi-handle').on("mouseup", function () {
 })
 
 
-
-// console.log(slider);
-
-//grab slider value
-
-
-
 $('.btn').on('click', function(event){
   event.preventDefault();
   //alcohol slider
