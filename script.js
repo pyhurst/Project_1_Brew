@@ -16,6 +16,40 @@ $(document).ready(function () {
   });
 console.log(slider);
 
+$('.btn').on('click', function(event){
+  event.preventDefault();
+  //alcohol slider
+  var abv_get = $('.noUi-handle').attr('aria-valuemin').val();
+  // var abv_lt = $('.noUi-handle').attr('aria-valuemax').val();
+
+
+  //shades dropdown
+  var ebc_gt;
+  var ebc_lt;
+
+
+  //bitterness checkboxes
+  var ibu_gt;
+  var ibu_lt;
+
+
+ 
+  var queryURL = "https://api.punkapi.com/v2/beers/?abv_gt="+abv_get; 
+
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function (response) {
+    console.log(response);
+    var beerPic = $("<img>");
+    beerPic.attr("src", response[0].image_url);
+    beerPic.attr("alt", "beer");
+    $("#beer-pic").append(beerPic);
+    beerPic.attr("style", "height: 200px");
+
+  });
+});
+
   // Renders food response from BrewDog API to page
   function renderFood() {
     var appId = '1efc5cb5';
@@ -52,8 +86,6 @@ console.log(slider);
     });
   }
 
-$('.btn').on('click', function(event){
-  event.preventDefault();
   renderFood();
 
   // Renders dessert response from BrewDog API to page
@@ -73,39 +105,6 @@ $('.btn').on('click', function(event){
       var label = $('<h4>').text(res.hints[0].food.label);
       var imgURL = res.hints[0].food.image;
       var img = $('<img>').attr('src', imgURL);
-
-  //alcohol slider
-  var abv_get = $('.noUi-handle').attr('aria-valuemin').val();
-  // var abv_lt = $('.noUi-handle').attr('aria-valuemax').val();
-
-
-  //shades dropdown
-  var ebc_gt;
-  var ebc_lt;
-
-
-  //bitterness checkboxes
-  var ibu_gt;
-  var ibu_lt;
-
-
- 
-  var queryURL = "https://api.punkapi.com/v2/beers/?abv_gt="+abv_get; 
-
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  }).then(function (response) {
-    console.log(response);
-    var beerPic = $("<img>");
-    beerPic.attr("src", response[0].image_url);
-    beerPic.attr("alt", "beer");
-    $("#beer-pic").append(beerPic);
-    beerPic.attr("style", "height: 200px");
-
-  });
-
-})
 
       $cardDiv.addClass('card');
       $cardImg.addClass('card-image');
