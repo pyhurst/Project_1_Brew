@@ -23,11 +23,12 @@
     </header>
     <div class="container">
       <div class="row">
-        <div id="beer-input" class="col s4">
+        <div id="beer-input" class="col s5">
 
           <form id="beer-input">
               <h2>What's your type?</h2>
             <h4>1. Alcohol Content</h4>
+            <span id="percent-range"></span>
             <div id="slider"></div>
             <h4>2. Color</h4>
             <div class="input-field col s12">
@@ -51,7 +52,7 @@
                   class="filled-in"
                   checked="checked"
                 />
-                <span>Light/No Hop flavor</span>
+                <span>Subtle Hop flavor</span><br>
               </label>
               <label>
                 <input
@@ -60,7 +61,7 @@
                   class="filled-in"
                   checked="checked"
                 />
-                <span>Medium Hop flavor</span>
+                <span>Medium Hop flavor</span><br>
               </label>
               <label>
                 <input
@@ -69,13 +70,13 @@
                   class="filled-in"
                   checked="checked"
                 />
-                <span>Strong hop flavor</span>
+                <span>Strong hop flavor</span> 
               </label>
             </p>
           </form>
           <a class="waves-effect waves-light btn">Search Beers</a>
         </div>
-        <div class="col s8" id="beer-display">
+        <div class="col s7" id="beer-display">
             <h2>Our Suggestion:</h2>
             <div id="beer-pic">
                
