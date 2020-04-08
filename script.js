@@ -13,6 +13,8 @@
 //         decimals: 0
 //     })
 // });
+
+// Initialize AOS
 AOS.init();
 
 $(document).ready(function () {
@@ -28,6 +30,7 @@ $(document).ready(function () {
     },
   });
 
+  // Renders food response from BrewDog API to page
   function renderFood() {
     var appId = '1efc5cb5';
     var appKey = 'b93713d669042a8117816b234a336ee5';
@@ -48,11 +51,13 @@ $(document).ready(function () {
 
       $cardDiv.addClass('card');
       $cardImg.addClass('card-image');
+      // Adds AOS animation to the card
       $cardDiv.attr('data-aos', 'fade-right');
       $cardDiv.attr('data-aos-offset', '300');
       $cardDiv.attr('data-aos-duration', '2000');
       // img.addClass('activator');
   
+      // Append divs to page
       $cardDiv.append($cardImg);
       $cardDiv.append($cardContent);
       $cardImg.append(img);
@@ -63,6 +68,7 @@ $(document).ready(function () {
 
   renderFood();
 
+  // Renders dessert response from BrewDog API to page
   function renderDessert() {
     var appId = '1efc5cb5';
     var appKey = 'b93713d669042a8117816b234a336ee5';
@@ -82,11 +88,13 @@ $(document).ready(function () {
 
       $cardDiv.addClass('card');
       $cardImg.addClass('card-image');
+      // Adds AOS animation to the card
       $cardDiv.attr('data-aos', 'fade-left');
       $cardDiv.attr('data-aos-offset', '300');
       $cardDiv.attr('data-aos-duration', '2000');
       // img.addClass('activator');
   
+      // Append divs to page
       $cardDiv.append($cardImg);
       $cardDiv.append($cardContent);
       $cardImg.append(img);
