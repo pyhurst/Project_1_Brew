@@ -21,8 +21,8 @@ $('.noUi-handle').on("mouseup", function () {
   var sliderMin = $('.noUi-handle-lower').attr('aria-valuenow');
   var sliderMax = $('.noUi-handle-upper').attr('aria-valuenow');
   var percentOnpage = $("#percent-range");
-  console.log(sliderMin);
-  console.log(sliderMax);
+  // console.log(sliderMin);
+  // console.log(sliderMax);
   percentOnpage.text(sliderMin + "%" + " min and " + sliderMax + "% max.");
 })
 
@@ -39,6 +39,8 @@ $('.btn').on('click', function(event){
   //alcohol slider
 var abv_get = $('.noUi-handle-lower').attr('aria-valuenow');//lower handle
 var abv_lt = $('.noUi-handle-upper').attr('aria-valuenow');//upper handle
+abv_get = parseInt(abv_get);
+abv_lt = parseInt(abv_lt);
 console.log(abv_get);
 console.log(abv_lt);
   //shades dropdown
