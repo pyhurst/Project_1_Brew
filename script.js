@@ -18,16 +18,24 @@ console.log(slider);
 $('.btn').on('click', function(event){
   event.preventDefault();
 
-  var abv_gt;
-  var abv_lt;
 
-  var ibu_gt;
-  var ibu_lt;
+  //alcohol slider
+  var abv_get = $('.noUi-handle').attr('aria-valuemin').val();
+  // var abv_lt = $('.noUi-handle').attr('aria-valuemax').val();
 
+
+  //shades dropdown
   var ebc_gt;
   var ebc_lt;
 
-  var queryURL = "https://api.punkapi.com/v2/beers/?abv_gt=" + abv_gt;
+
+  //bitterness checkboxes
+  var ibu_gt;
+  var ibu_lt;
+
+
+ 
+  var queryURL = "https://api.punkapi.com/v2/beers/?abv_gt="+abv_get; 
 
   $.ajax({
     url: queryURL,
