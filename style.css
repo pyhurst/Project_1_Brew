@@ -68,3 +68,7 @@ div.noUi-connect {
   /* border: 1px dotted wheat; */
   text-align: end;
 }
+
+.btn {
+  background-color: rgb(255, 114, 38);
+}
