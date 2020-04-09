@@ -129,6 +129,23 @@ var colorChoice = $('.dropdown-trigger').val();
   var ibu_gt = ibuArr[0];
   var ibu_lt = ibuArr[ibuArr.length - 1];
 
+  $('#error-text').text("");
+  if (colorChoice === "Choose your beer shade") {
+    console.log("This is working");
+    $('#error-text').text("Please select all fields.")
+    console.log(ibu_gt);
+    console.log(ibu_lt);
+  } else if (((ibu_gt) === undefined) || ((ibu_lt) === undefined)) {
+    $('#error-text').text("Please select all fields.");
+  }
+
+
+
+
+
+
+
+
 
   // BrewDog API
   var queryURL = "https://api.punkapi.com/v2/beers/?abv_gt=" + abv_get + "&abv_lt=" + abv_lt + "&ebc_gt=" + ebc_gt + "&ebc_lt=" + ebc_lt + "&ibu_lt=" + ibu_lt + "&ibu-gt=" + ibu_gt; 
@@ -145,7 +162,19 @@ var colorChoice = $('.dropdown-trigger').val();
       for(i = 0; i < 5; i++) {
         renderBeer(response);
       }
-    } else {
+    // } else if(response.length === 0) {
+    //   console.log("sad cheers");
+    //   var sadBeer = $('<img>');
+    //   sadBeer.attr('src', '')
+    //   sadBeer.attr('alt', 'sad-beer-image');
+    //   $('#beer-pic').append(sadBeer);
+
+
+
+
+
+    // }
+    else {
       for(i = 0; i < response.length; i++) {
         renderBeer(response);
       }
@@ -157,6 +186,7 @@ var colorChoice = $('.dropdown-trigger').val();
 
     return renderFood(foodPair), renderDessert(dessertPair);
   }).catch(function(error){
+
     console.log('sorry we failed');
     console.log(error.status);
   });

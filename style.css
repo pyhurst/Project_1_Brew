@@ -110,3 +110,7 @@ div.noUi-connect {
 }
 
 }
+
+#error-message {
+  margin-top: 5px;
+}
