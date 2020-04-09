@@ -24,6 +24,14 @@ $(document).ready(function () {
     percentOnpage.text(sliderMin + "%" + " min and " + sliderMax + "% max.");
   });
 
+  document.addEventListener('mouseup', handle);
+  function handle() {
+    var sliderMin = $(".noUi-handle-lower").attr("aria-valuenow");
+    var sliderMax = $(".noUi-handle-upper").attr("aria-valuenow");
+    var percentOnpage = $("#percent-range");
+    percentOnpage.text(sliderMin + "%" + " min and " + sliderMax + "% max.");
+  }
+
   // Bitterness checkboxes
   var ibuArr = [];
   $("#light").on("click", function () {
