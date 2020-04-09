@@ -162,18 +162,23 @@ var colorChoice = $('.dropdown-trigger').val();
       for(i = 0; i < 5; i++) {
         renderBeer(response);
       }
-    // } else if(response.length === 0) {
-    //   console.log("sad cheers");
-    //   var sadBeer = $('<img>');
-    //   sadBeer.attr('src', '')
-    //   sadBeer.attr('alt', 'sad-beer-image');
-    //   $('#beer-pic').append(sadBeer);
+    } else if(response.length === 0) {
+      console.log("sad cheers");
+      var sadBeer = $('<img>');
+      sadBeer.attr('src', 'images/final-sad-beer.jpg')
+      sadBeer.attr('alt', 'sad-beer-image');
+      sadBeer.attr('style', 'width: 40%');
+      $('#beer-pic').attr('style' , 'text-align: center; width: 100%;');
+      $('#beer-pic').append(sadBeer);
+      var responseText = $('<h3>');
+      responseText.text("No beers found. Please refine your search!");
+      $('#beer-pic').append(responseText);
 
 
 
 
 
-    // }
+    }
     else {
       for(i = 0; i < response.length; i++) {
         renderBeer(response);
