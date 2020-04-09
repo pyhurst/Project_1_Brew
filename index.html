@@ -30,9 +30,9 @@
             <h4>1. Alcohol Content</h4>
             <span id="percent-range"></span>
             <div id="slider"></div>
-            <h4>2. Color</h4>
+            <h4>2. Color <div id='color-display'></div></h4>
             <div class="input-field col s12">
-              <select>
+              <select id='selection'>
                 <option value="" disabled selected>Choose your beer shade</option>
                 <option id="color1" value="1" data-min="0" data-max="4">Pale Straw</option>
                 <option id="color2" value="2" data-min="5" data-max="12">Gold</option>
@@ -43,6 +43,7 @@
               
             </div>
 
+            <div class="bitter">
             <p>
                 <h4>3. Bitterness</h4>
               <label>
@@ -50,38 +51,37 @@
                   id="light"
                   type="checkbox"
                   class="filled-in"
-                  checked="checked"
                 />
                 <span>Subtle Hop flavor</span><br>
               </label>
+            </p>
+            <p>
               <label>
                 <input
                   id="medium"
                   type="checkbox"
                   class="filled-in"
-                  checked="checked"
                 />
                 <span>Medium Hop flavor</span><br>
               </label>
+            </p>
+            <p>
               <label>
                 <input
                   id="strong"
                   type="checkbox"
                   class="filled-in"
-                  checked="checked"
                 />
                 <span>Strong hop flavor</span> 
               </label>
             </p>
+          </div>
           </form>
           <a class="waves-effect waves-light btn">Search Beers</a>
         </div>
         <div class="col s7" id="beer-display">
             <h2>Our Suggestion:</h2>
-            <div id="beer-pic">
-               
-            </div>
-            
+            <div id="beer-pic"></div>
         </div>
       </div>
       <div class="row">
@@ -92,7 +92,7 @@
 
       </div>
     </div>
-
+    
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
