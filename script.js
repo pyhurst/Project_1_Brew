@@ -30,50 +30,86 @@ $('.noUi-handle').on("mouseup", function () {
 
 // console.log(slider);
 
-//grab slider value
-
-
+// Bitterness checkboxes
+var ibuArr = [];
+$('#light').on('click', function(){
+  // event.preventDefault();
+  // console.log($(this)[0].checked);
+  if($(this)[0].checked){
+    // console.log('checked');
+    ibuArr.push(0, 20);
+    console.log(ibuArr);
+  } else {
+    // console.log('unchecked');
+    ibuArr.splice(ibuArr.indexOf(20), 1);
+    ibuArr.splice(ibuArr.indexOf(0), 1);
+    console.log(ibuArr);
+  }
+});
+$('#medium').on('click', function(){
+  // event.preventDefault();
+  if($(this)[0].checked){
+    ibuArr.push(21, 40);
+    console.log(ibuArr);
+  } else {
+    ibuArr.splice(ibuArr.indexOf(21), 1);
+    ibuArr.splice(ibuArr.indexOf(40), 1);
+    console.log(ibuArr);
+  }
+});
+$('#strong').on('click', function(){
+  // event.preventDefault();
+  if($(this)[0].checked){
+    ibuArr.push(41, 150);
+    console.log(ibuArr);
+  } else {
+    ibuArr.splice(ibuArr.indexOf(41), 1);
+    ibuArr.splice(ibuArr.indexOf(150), 1);
+    console.log(ibuArr);
+  }
+});
 
 $('.btn').on('click', function(event){
   event.preventDefault();
   //alcohol slider
-var abv_get = $('.noUi-handle-lower').attr('aria-valuenow');//lower handle
-var abv_lt = $('.noUi-handle-upper').attr('aria-valuenow');//upper handle
-abv_get = parseInt(abv_get);
-abv_lt = parseInt(abv_lt);
-console.log(abv_get);
-console.log(abv_lt);
+  var abv_get = $('.noUi-handle-lower').attr('aria-valuenow');//lower handle
+  var abv_lt = $('.noUi-handle-upper').attr('aria-valuenow');//upper handle
+  abv_get = parseInt(abv_get);
+  abv_lt = parseInt(abv_lt);
+  console.log(abv_get);
+  console.log(abv_lt);
   //shades dropdown
 var colorChoice = $('.dropdown-trigger').val();
 
   console.log(colorChoice);
-if(colorChoice === "Pale Straw") {
-  var ebc_gt = $('#color1').attr("data-min");
-  var ebc_lt = $('#color1').attr("data-max");
-} else if(colorChoice === "Gold") {
-  var ebc_gt = $('#color2').attr("data-min");
-  var ebc_lt = $('#color2').attr("data-max");
-} else if(colorChoice === "Amber") {
-  var ebc_gt = $('#color3').attr("data-min");
-  var ebc_lt = $('#color3').attr("data-max");
-} else if (colorChoice === "Deep Brown") {
-  var ebc_gt = $('#color4').attr("data-min");
-  var ebc_lt = $('#color4').attr("data-max");
-} else if (colorChoice === "Black") {
-  var ebc_gt = $('#color5').attr("data-min");
-  var ebc_lt = $('#color5').attr("data-max");
-}
+  if(colorChoice === "Pale Straw") {
+    var ebc_gt = $('#color1').attr("data-min");
+    var ebc_lt = $('#color1').attr("data-max");
+  } else if(colorChoice === "Gold") {
+    var ebc_gt = $('#color2').attr("data-min");
+    var ebc_lt = $('#color2').attr("data-max");
+  } else if(colorChoice === "Amber") {
+    var ebc_gt = $('#color3').attr("data-min");
+    var ebc_lt = $('#color3').attr("data-max");
+  } else if (colorChoice === "Deep Brown") {
+    var ebc_gt = $('#color4').attr("data-min");
+    var ebc_lt = $('#color4').attr("data-max");
+  } else if (colorChoice === "Black") {
+    var ebc_gt = $('#color5').attr("data-min");
+    var ebc_lt = $('#color5').attr("data-max");
+  }
 
-ebc_gt = parseInt(ebc_gt);
-ebc_lt = parseInt(ebc_lt);
-console.log(ebc_gt);
-console.log(ebc_lt);
+  ebc_gt = parseInt(ebc_gt);
+  ebc_lt = parseInt(ebc_lt);
+  console.log(ebc_gt);
+  console.log(ebc_lt);
 
 
 
 //bitterness checkboxes
-var ibu_gt;
-var ibu_lt;
+  // if($('.bitter'))
+  // var ibu_gt;
+  // var ibu_lt;
 
   +"&ebc_gt=" + ebc_gt + "&ebc_lt=" + ebc_lt
  
