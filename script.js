@@ -77,6 +77,9 @@ if($('#selection').val() == 1){
 
 $('.btn').on('click', function(event){
   event.preventDefault();
+  $('#beer-pic').empty();
+  $('#food-display').empty();
+  $('#dessert-display').empty();
   //alcohol slider
   var abv_get = $('.noUi-handle-lower').attr('aria-valuenow');//lower handle
   var abv_lt = $('.noUi-handle-upper').attr('aria-valuenow');//upper handle
@@ -148,6 +151,8 @@ var colorChoice = $('.dropdown-trigger').val();
     var dessertPair = response[0].food_pairing[2];
 
     return renderFood(foodPair), renderDessert(dessertPair);
+  }).catch(function(){
+    console.log('sorry we failed');
   });
 });
 
@@ -208,6 +213,8 @@ function renderBeer(response) {
       $cardImg.append(img);
       $cardContent.append(label);
       $('#food-display').append($cardDiv);
+    }).catch(function(){
+      console.log('sorry no food for you!');
     });
   }
 
@@ -244,6 +251,8 @@ function renderBeer(response) {
       $cardImg.append(img);
       $cardContent.append(label);
       $('#dessert-display').append($cardDiv);
+    }).catch(function(){
+      console.log('Sorry no food for you!');
     });
   }
 });
