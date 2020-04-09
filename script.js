@@ -24,7 +24,7 @@ $(document).ready(function () {
     percentOnpage.text(sliderMin + "%" + " min and " + sliderMax + "% max.");
   });
 
-  document.addEventListener('mouseup', handle);
+  document.addEventListener("mouseup", handle);
   function handle() {
     var sliderMin = $(".noUi-handle-lower").attr("aria-valuenow");
     var sliderMax = $(".noUi-handle-upper").attr("aria-valuenow");
@@ -228,10 +228,10 @@ $(document).ready(function () {
     // beerPic.attr("src", response[i].image_url);
     // console.log(typeof(response[i].image_url));
     // beerPic.attr("src", response[i].image_url);
-    if(typeof(response[i].image_url) === 'string'){
+    if (typeof response[i].image_url === "string") {
       beerPic.attr("src", response[i].image_url);
     } else {
-      beerPic.attr("src", './images/brew-logo.png');
+      beerPic.attr("src", "./images/brew-logo.png");
     }
     beerPic.attr("alt", "beer");
     beerPic.attr("style", "height: 200px;");
@@ -281,6 +281,21 @@ $(document).ready(function () {
 
 
         $cardDiv.addClass("card");
+        console.log(imgURL);
+        if (typeof imgURL === "string") {
+          var $cardImg = $("<div>");
+          var imgURL = res.hints[0].food.image;
+          var img = $("<img>").attr("src", imgURL);
+          $cardDiv.append($cardImg);
+        } else {
+          var $cardImg = $("<div>");
+          var googleLink = $("<a>");
+          googleLink.text(" See Google");
+          $(googleLink).attr("href", "https://www.google.com");
+          googleLink.attr("target", "_blank");
+          $cardImg.append(googleLink);
+          $cardDiv.append($cardImg);
+        }
         $cardImg.addClass("card-image");
         // Adds AOS animation to the card
         $cardDiv.attr("data-aos", "fade-right");
@@ -343,6 +358,23 @@ $(document).ready(function () {
 
 
         $cardDiv.addClass("card");
+        console.log(imgURL);
+
+        if (typeof imgURL === "string") {
+          var $cardImg = $("<div>");
+          var imgURL = res.hints[0].food.image;
+          var img = $("<img>").attr("src", imgURL);
+          $cardDiv.append($cardImg);
+        } else {
+          var $cardImg = $("<div>");
+          var googleLink = $("<a>");
+          googleLink.text("See Google");
+          googleLink.attr("href", "https://www.google.com");
+          googleLink.attr("target", "_blank");
+          $cardImg.append(googleLink);
+          $cardDiv.append($cardImg);
+        }
+
         $cardImg.addClass("card-image");
         // Adds AOS animation to the card
         $cardDiv.attr("data-aos", "fade-right");
@@ -355,6 +387,7 @@ $(document).ready(function () {
         // Append divs to page
         label.append(icon);
         $cardDiv.append($cardImg);
+        // $cardDiv.append($cardImg);
         $cardDiv.append($cardContent);
         $cardImg.append(img);
         $cardContent.append(label);
