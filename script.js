@@ -225,7 +225,14 @@ $(document).ready(function () {
     var abv = $("<h6>").text("Alcohol Content: " + response[i].abv + "%");
     var description = $("<p>").text("Description: " + response[i].description);
 
-    beerPic.attr("src", response[i].image_url);
+    // beerPic.attr("src", response[i].image_url);
+    // console.log(typeof(response[i].image_url));
+    // beerPic.attr("src", response[i].image_url);
+    if(typeof(response[i].image_url) === 'string'){
+      beerPic.attr("src", response[i].image_url);
+    } else {
+      beerPic.attr("src", './images/brew-logo.png');
+    }
     beerPic.attr("alt", "beer");
     beerPic.attr("style", "height: 200px;");
     // beerDiv.attr('style', "display: flex;");
