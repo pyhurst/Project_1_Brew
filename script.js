@@ -259,13 +259,26 @@ $(document).ready(function () {
       method: "GET",
     })
       .then(function (res) {
-        // console.log(res);
+        console.log(res);
         var $cardDiv = $("<div>");
-        // var $cardImg = $("<div>");
-        var $cardContent = $("<div>");
-        var label = $("<h4>").text(res.hints[0].food.label);
+        var $cardImg = $("<div>");
+        var $cardContent = $("<div>").addClass("card-content");
+        var label = $("<span>").text(res.hints[0].food.label).addClass("activator"); //add id later
         var imgURL = res.hints[0].food.image;
         var img = $("<img>").attr("src", imgURL);
+        var icon = $("<i>").addClass("material-icons right").text("nutrition facts");
+        var cardReveal = $("<div>").addClass("card-reveal");
+        var revealLabel = $("<span>").addClass("card-title");
+        var revealIcon = $("<i>").addClass("material-icons right").text("close");
+        var nutritionInfo = $("<p>").text("Nutritional Info:");
+        var nutritionCard = $("<div>");
+
+        var calories = res.hints[0].food.nutrients.ENERC_KAL;
+        var protein = res.hints[0].food.nutrients.PROCNT;
+        var fiber = res.hints[0].food.nutrients.FIBTG;
+        var carbs = res.hints[0].food.nutrients.CHOCDF;
+        var fats = res.hints[0].food.nutrients.FAT;
+
 
         $cardDiv.addClass("card");
         console.log(imgURL);
@@ -288,13 +301,23 @@ $(document).ready(function () {
         $cardDiv.attr("data-aos", "fade-right");
         $cardDiv.attr("data-aos-offset", "300");
         $cardDiv.attr("data-aos-duration", "2000");
-        // img.addClass('activator');
+        label.attr("id", "card-name"); 
+
+        img.addClass('activator');
 
         // Append divs to page
-        // $cardDiv.append($cardImg);
+        label.append(icon);
+        $cardDiv.append($cardImg);
         $cardDiv.append($cardContent);
         $cardImg.append(img);
         $cardContent.append(label);
+        $cardDiv.append(cardReveal);
+        cardReveal.append(revealLabel);
+        revealLabel.append(revealIcon);
+        cardReveal.append(nutritionInfo);
+        nutritionInfo.append(nutritionCard);
+        nutritionCard.append("calories: " + calories + " KCAL, protein: " + protein + "g, fiber: " + fiber + "g, carbs: " + carbs + "g, " + "fats: " + fats);
+
         $("#food-display").append($cardDiv);
       })
       .catch(function () {
@@ -315,11 +338,25 @@ $(document).ready(function () {
     })
       .then(function (res) {
         var $cardDiv = $("<div>");
-        // var $cardImg = $("<div>");
-        var $cardContent = $("<div>");
-        var label = $("<h4>").text(res.hints[0].food.label);
+        var $cardImg = $("<div>");
+        var $cardContent = $("<div>").addClass("card-content");
+        var label = $("<span>").text(res.hints[0].food.label).addClass("activator"); //add id later
         var imgURL = res.hints[0].food.image;
         var img = $("<img>").attr("src", imgURL);
+        var icon = $("<i>").addClass("material-icons right").text("nutrition facts");
+        var cardReveal = $("<div>").addClass("card-reveal");
+        var revealLabel = $("<span>").addClass("card-title");
+        var revealIcon = $("<i>").addClass("material-icons right").text("close");
+        var nutritionInfo = $("<p>").text("Nutritional Info:");
+        var nutritionCard = $("<div>");
+
+        var calories = res.hints[0].food.nutrients.ENERC_KAL;
+        var protein = res.hints[0].food.nutrients.PROCNT;
+        var fiber = res.hints[0].food.nutrients.FIBTG;
+        var carbs = res.hints[0].food.nutrients.CHOCDF;
+        var fats = res.hints[0].food.nutrients.FAT;
+
+
         $cardDiv.addClass("card");
         console.log(imgURL);
 
@@ -340,16 +377,35 @@ $(document).ready(function () {
 
         $cardImg.addClass("card-image");
         // Adds AOS animation to the card
-        $cardDiv.attr("data-aos", "fade-left");
+        $cardDiv.attr("data-aos", "fade-right");
         $cardDiv.attr("data-aos-offset", "300");
         $cardDiv.attr("data-aos-duration", "2000");
-        // img.addClass('activator');
+        label.attr("id", "card-name"); 
+
+        img.addClass('activator');
 
         // Append divs to page
+        label.append(icon);
+        $cardDiv.append($cardImg);
         // $cardDiv.append($cardImg);
         $cardDiv.append($cardContent);
         $cardImg.append(img);
         $cardContent.append(label);
+        $cardDiv.append(cardReveal);
+        cardReveal.append(revealLabel);
+        revealLabel.append(revealIcon);
+        cardReveal.append(nutritionInfo);
+        nutritionInfo.append(nutritionCard);
+        nutritionCard.append("calories: " + calories + " KCAL, protein: " + protein + "g, fiber: " + fiber + "g, carbs: " + carbs + "g, " + "fats: " + fats);
+
+
+
+
+
+
+
+
+
         $("#dessert-display").append($cardDiv);
       })
       .catch(function () {

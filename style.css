@@ -58,17 +58,6 @@ div.noUi-connect {
   font-family: "Bebas Neue", cursive;
 }
 
-#straw {
-  background-image: url(
-    https://ctl.s6img.com/society6/img/moD2EU0m57rnMb4CX7yOux3tjqo/w_700/duvet-covers/swatch/~artwork,
-    fw_6000,
-    fh_6000,
-    iw_6000,
-    ih_6000/s6-original-art-uploads/society6/uploads/misc/971a247937c341a8b3fff776a431fd92/~~/solid-pale-corn-yellow-color-duvet-covers.jpg
-  );
-  height: 5px;
-}
-
 /* checkboxes */
 [type="checkbox"].filled-in:checked + span:not(.lever):after {
   border-color: rgb(255, 114, 38);
