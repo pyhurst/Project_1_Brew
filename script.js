@@ -15,7 +15,6 @@ $(document).ready(function () {
     },
   });
 
-
 $('.noUi-handle').on("mouseup", function () { 
 //   // var slider = $("#slider");
   var sliderMin = $('.noUi-handle-lower').attr('aria-valuenow');
@@ -25,10 +24,6 @@ $('.noUi-handle').on("mouseup", function () {
   // console.log(sliderMax);
   percentOnpage.text(sliderMin + "%" + " min and " + sliderMax + "% max.");
 })
-
-
-
-// console.log(slider);
 
 // Bitterness checkboxes
 var ibuArr = [];
@@ -62,6 +57,23 @@ $('#strong').on('click', function(){
     ibuArr.splice(ibuArr.indexOf(200), 1);
   }
 });
+
+// Dropdown Color Change
+$('.input-field').change(dropdownColor);
+function dropdownColor() {
+// console.log($('#selection').val());
+if($('#selection').val() == 1){
+  console.log('pale straw');
+} else if ($('#selection').val() == 2){
+  console.log('gold');
+} else if ($('#selection').val() == 3){
+  console.log('amber');
+} else if ($('#selection').val() == 4){
+  console.log('deep brown');
+} else if ($('#selection').val() == 5){
+  console.log('black');
+}
+}
 
 $('.btn').on('click', function(event){
   event.preventDefault();
