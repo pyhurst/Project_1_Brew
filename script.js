@@ -63,19 +63,19 @@ $('.input-field').change(dropdownColor);
 function dropdownColor() {
 // console.log($('#selection').val());
 if($('#selection').val() == 1){
-  console.log('pale straw');
+  // console.log('pale straw');
   $('#color-display').attr('style', 'width: 50px; height: 50px; background-color: blue;');
 } else if ($('#selection').val() == 2){
-  console.log('gold');
+  // console.log('gold');
   $('#color-display').attr('style', 'width: 50px; height: 50px; background-color: gold;');
 } else if ($('#selection').val() == 3){
-  console.log('amber');
+  // console.log('amber');
   $('#color-display').attr('style', 'width: 50px; height: 50px; background-color: red;');
 } else if ($('#selection').val() == 4){
-  console.log('deep brown');
+  // console.log('deep brown');
   $('#color-display').attr('style', 'width: 50px; height: 50px; background-color: brown;');
 } else {
-  console.log('black');
+  // console.log('black');
   $('#color-display').attr('style', 'width: 50px; height: 50px; background-color: green;');
 }
 }
@@ -137,19 +137,12 @@ var colorChoice = $('.dropdown-trigger').val();
     url: queryURL,
     method: "GET"
   }).then(function (response) {
-    console.log(response);
-    
-    var beerPic = $("<img>");
-    beerPic.attr("src", response[0].image_url);
-    beerPic.attr("alt", "beer");
-    $("#beer-pic").append(beerPic);
-    beerPic.attr("style", "height: 200px");
+    // console.log(response);
+    // console.log(response.length);
 
-    console.log(response.length);
-
-    // Render 10 beers if response array is greater than 10 or else list all
-    if(response.length > 10) {
-      for(i = 0; i < 10; i++) {
+    // Render 5 beers if response array is greater than 5 or else list all
+    if(response.length > 5) {
+      for(i = 0; i < 5; i++) {
         renderBeer(response);
       }
     } else {
@@ -163,8 +156,9 @@ var colorChoice = $('.dropdown-trigger').val();
     var dessertPair = response[0].food_pairing[2];
 
     return renderFood(foodPair), renderDessert(dessertPair);
-  }).catch(function(){
+  }).catch(function(error){
     console.log('sorry we failed');
+    console.log(error.status);
   });
 });
 
@@ -229,7 +223,6 @@ function renderBeer(response) {
       console.log('sorry no food for you!');
     });
   }
-
 
   // Renders dessert response from BrewDog API to page
   function renderDessert(dessertPair) {
