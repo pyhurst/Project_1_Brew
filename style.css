@@ -3,14 +3,14 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Bebas Neue', cursive;
+  font-family: "Bebas Neue", cursive;
 }
 
 /* Heading */
 header {
   text-align: center;
   background-image: url(https://images.photowall.com/products/45025/beer.jpg?h=699&q=85);
-  font-family: 'Bebas Neue', cursive;
+  font-family: "Bebas Neue", cursive;
   padding: 1em;
   color: white;
   text-shadow: 1px 2px 3px rgb(138, 101, 0);
@@ -26,14 +26,14 @@ header p {
 }
 
 h2 {
-  font-family: 'Bebas Neue', cursive;
+  font-family: "Bebas Neue", cursive;
   color: rgb(255, 168, 38);
   text-shadow: 1px 2px 3px rgb(138, 101, 0);
 }
 
 h4 {
   color: rgb(255, 114, 38);
-  font-family: 'Bebas Neue', cursive;
+  font-family: "Bebas Neue", cursive;
 }
 /* slider */
 div.noUi-connect {
@@ -46,7 +46,6 @@ div.noUi-connect {
 
 /* color shades */
 
-
 .input-field li span {
   color: black;
 }
@@ -56,19 +55,22 @@ div.noUi-connect {
 }
 
 .select-wrapper input.select-dropdown {
-  font-family: 'Bebas Neue', cursive;
+  font-family: "Bebas Neue", cursive;
 }
 
 #straw {
-  background-image: url(https://ctl.s6img.com/society6/img/moD2EU0m57rnMb4CX7yOux3tjqo/w_700/duvet-covers/swatch/~artwork,fw_6000,fh_6000,iw_6000,ih_6000/s6-original-art-uploads/society6/uploads/misc/971a247937c341a8b3fff776a431fd92/~~/solid-pale-corn-yellow-color-duvet-covers.jpg);
+  background-image: url(
+    https://ctl.s6img.com/society6/img/moD2EU0m57rnMb4CX7yOux3tjqo/w_700/duvet-covers/swatch/~artwork,
+    fw_6000,
+    fh_6000,
+    iw_6000,
+    ih_6000/s6-original-art-uploads/society6/uploads/misc/971a247937c341a8b3fff776a431fd92/~~/solid-pale-corn-yellow-color-duvet-covers.jpg
+  );
   height: 5px;
 }
 
-
-
-
 /* checkboxes */
-[type="checkbox"].filled-in:checked+span:not(.lever):after {
+[type="checkbox"].filled-in:checked + span:not(.lever):after {
   border-color: rgb(255, 114, 38);
   background-color: wheat;
 }
@@ -83,32 +85,29 @@ div.noUi-connect {
   background-color: rgb(255, 114, 38);
 }
 
-
 @media only screen and (max-width: 600px) {
-  
-#beer-input {
-  width: 100%;
-  text-align: center;
-}
+  #beer-input {
+    width: 100%;
+    text-align: center;
+  }
 
-#beer-display {
-  width: 100%;
-  text-align: center;
-}
+  #beer-display {
+    width: 100%;
+    text-align: center;
+  }
 
-#beer-display h2 {
-  /* border: 1px dotted wheat; */
-  text-align: left;
-}
+  #beer-display h2 {
+    /* border: 1px dotted wheat; */
+    text-align: left;
+  }
 
-#food-display {
-  width: 100%;
-}
+  #food-display {
+    width: 100%;
+  }
 
-#dessert-display {
-  width: 100%;
-}
-
+  #dessert-display {
+    width: 100%;
+  }
 }
 
 #error-message {
