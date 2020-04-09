@@ -56,10 +56,10 @@ $('#medium').on('click', function(){
 $('#strong').on('click', function(){
   // event.preventDefault();
   if($(this)[0].checked){
-    ibuArr.push(41, 150);
+    ibuArr.push(41, 200);
   } else {
     ibuArr.splice(ibuArr.indexOf(41), 1);
-    ibuArr.splice(ibuArr.indexOf(150), 1);
+    ibuArr.splice(ibuArr.indexOf(200), 1);
   }
 });
 
@@ -123,34 +123,26 @@ var colorChoice = $('.dropdown-trigger').val();
     beerPic.attr("alt", "beer");
     $("#beer-pic").append(beerPic);
     beerPic.attr("style", "height: 200px");
+    var foodPair = response[0].food_pairing[0];
+    var dessertPair = response[0].food_pairing[2];
 
+    return renderFood(foodPair), renderDessert(dessertPair);
   });
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 //===========================================================================
   // Renders food response from BrewDog API to page
-  function renderFood() {
+  function renderFood(foodPair) {
     var appId = '1efc5cb5';
     var appKey = 'b93713d669042a8117816b234a336ee5';
-    var foodInput = 'pizza';
+    var foodInput = foodPair;
     var queryURL = `https://api.edamam.com/api/food-database/parser?ingr=${foodInput}&app_id=${appId}&app_key=${appKey}`;
   
     $.ajax({
       url: queryURL,
-      method: 'GET'
+      method: 'GET',
+      async: false,
+      timeout: 2000
     }).then(function(res){
       // console.log(res);
       var $cardDiv = $('<div>');
@@ -177,13 +169,12 @@ var colorChoice = $('.dropdown-trigger').val();
     });
   }
 
-  renderFood();
 
   // Renders dessert response from BrewDog API to page
-  function renderDessert() {
+  function renderDessert(dessertPair) {
     var appId = '1efc5cb5';
     var appKey = 'b93713d669042a8117816b234a336ee5';
-    var dessertInput = 'ice cream';
+    var dessertInput = dessertPair;
     var queryURL = `https://api.edamam.com/api/food-database/parser?ingr=${dessertInput}&app_id=${appId}&app_key=${appKey}`;
   
     $.ajax({
@@ -213,9 +204,6 @@ var colorChoice = $('.dropdown-trigger').val();
       $('#dessert-display').append($cardDiv);
     });
   }
-
-  renderDessert();
-
 });
 
 
