@@ -138,6 +138,13 @@ var colorChoice = $('.dropdown-trigger').val();
     method: "GET"
   }).then(function (response) {
     console.log(response);
+    
+    var beerPic = $("<img>");
+    beerPic.attr("src", response[0].image_url);
+    beerPic.attr("alt", "beer");
+    $("#beer-pic").append(beerPic);
+    beerPic.attr("style", "height: 200px");
+
     console.log(response.length);
 
     // Render 10 beers if response array is greater than 10 or else list all
