@@ -64,19 +64,19 @@ function dropdownColor() {
 // console.log($('#selection').val());
 if($('#selection').val() == 1){
   // console.log('pale straw');
-  $('#color-display').attr('style', 'width: 50px; height: 50px; background-color: blue;');
+  $('#color-display').attr('style', 'width: 50px; height: 50px; background-color: rgb(252, 234, 111);');
 } else if ($('#selection').val() == 2){
   // console.log('gold');
-  $('#color-display').attr('style', 'width: 50px; height: 50px; background-color: gold;');
+  $('#color-display').attr('style', 'width: 50px; height: 50px; background-color: rgb(232, 163, 2);');
 } else if ($('#selection').val() == 3){
   // console.log('amber');
-  $('#color-display').attr('style', 'width: 50px; height: 50px; background-color: red;');
+  $('#color-display').attr('style', 'width: 50px; height: 50px; background-color: rgb(191, 80, 0);');
 } else if ($('#selection').val() == 4){
   // console.log('deep brown');
-  $('#color-display').attr('style', 'width: 50px; height: 50px; background-color: brown;');
+  $('#color-display').attr('style', 'width: 50px; height: 50px; background-color: rgb(115, 57, 16);');
 } else {
   // console.log('black');
-  $('#color-display').attr('style', 'width: 50px; height: 50px; background-color: green;');
+  $('#color-display').attr('style', 'width: 50px; height: 50px; background-color: rgb(38, 16, 1);');
 }
 }
 
