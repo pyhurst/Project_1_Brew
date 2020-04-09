@@ -118,17 +118,49 @@ var colorChoice = $('.dropdown-trigger').val();
     method: "GET"
   }).then(function (response) {
     console.log(response);
-    var beerPic = $("<img>");
-    beerPic.attr("src", response[0].image_url);
-    beerPic.attr("alt", "beer");
-    $("#beer-pic").append(beerPic);
-    beerPic.attr("style", "height: 200px");
+    console.log(response.length);
+
+    // Render 10 beers if response array is greater than 10 or else list all
+    if(response.length > 10) {
+      for(i = 0; i < 10; i++) {
+        renderBeer(response);
+      }
+    } else {
+      for(i = 0; i < response.length; i++) {
+        renderBeer(response);
+      }
+    }
+    // renderBeer(response);
+
     var foodPair = response[0].food_pairing[0];
     var dessertPair = response[0].food_pairing[2];
 
     return renderFood(foodPair), renderDessert(dessertPair);
   });
 });
+
+function renderBeer(response) {
+  var beerDiv = $("#beer-pic");
+  var $div = $('<div>');
+  var beerPic = $("<img>");
+  var name = $('<h4>').text("Name: " + response[i].name);
+  var tagLine = $('<h6>').text("Tag Line: " + response[i].tagline);
+  var abv = $('<h6>').text("Alcohol Content: " + response[i].abv + '%');
+  var description = $('<p>').text("Description: " + response[i].description);
+
+  beerPic.attr("src", response[i].image_url);
+  beerPic.attr("alt", "beer");
+  beerPic.attr("style", "height: 200px;");
+  // beerDiv.attr('style', "display: flex;");
+  $div.attr('data-aos', 'flip-up');
+
+  beerDiv.append($div);
+  $div.append(beerPic);
+  $div.append(name);
+  name.append(tagLine);
+  tagLine.append(abv);
+  abv.append(description);
+}
 
 //===========================================================================
   // Renders food response from BrewDog API to page
@@ -141,8 +173,6 @@ var colorChoice = $('.dropdown-trigger').val();
     $.ajax({
       url: queryURL,
       method: 'GET',
-      async: false,
-      timeout: 2000
     }).then(function(res){
       // console.log(res);
       var $cardDiv = $('<div>');
