@@ -38,34 +38,28 @@ $('#light').on('click', function(){
   if($(this)[0].checked){
     // console.log('checked');
     ibuArr.push(0, 20);
-    console.log(ibuArr);
   } else {
     // console.log('unchecked');
     ibuArr.splice(ibuArr.indexOf(20), 1);
     ibuArr.splice(ibuArr.indexOf(0), 1);
-    console.log(ibuArr);
   }
 });
 $('#medium').on('click', function(){
   // event.preventDefault();
   if($(this)[0].checked){
     ibuArr.push(21, 40);
-    console.log(ibuArr);
   } else {
     ibuArr.splice(ibuArr.indexOf(21), 1);
     ibuArr.splice(ibuArr.indexOf(40), 1);
-    console.log(ibuArr);
   }
 });
 $('#strong').on('click', function(){
   // event.preventDefault();
   if($(this)[0].checked){
     ibuArr.push(41, 150);
-    console.log(ibuArr);
   } else {
     ibuArr.splice(ibuArr.indexOf(41), 1);
     ibuArr.splice(ibuArr.indexOf(150), 1);
-    console.log(ibuArr);
   }
 });
 
@@ -76,8 +70,8 @@ $('.btn').on('click', function(event){
   var abv_lt = $('.noUi-handle-upper').attr('aria-valuenow');//upper handle
   abv_get = parseInt(abv_get);
   abv_lt = parseInt(abv_lt);
-  console.log(abv_get);
-  console.log(abv_lt);
+  // console.log(abv_get);
+  // console.log(abv_lt);
   //shades dropdown
 var colorChoice = $('.dropdown-trigger').val();
 
@@ -106,15 +100,19 @@ var colorChoice = $('.dropdown-trigger').val();
 
 
 
-//bitterness checkboxes
-  // if($('.bitter'))
-  // var ibu_gt;
-  // var ibu_lt;
+// bitterness checkboxes
+  function sortArr(a,b) {
+    return a - b;
+  }
+  ibuArr.sort(sortArr);
 
-  +"&ebc_gt=" + ebc_gt + "&ebc_lt=" + ebc_lt
- 
-  var queryURL = "https://api.punkapi.com/v2/beers/?abv_gt=" + abv_get + "&abv_lt=" + abv_lt + "&ebc_gt=" + ebc_gt + "&ebc_lt=" + ebc_lt; 
-  // +"&ebc_gt=" + ebc_gt
+  var ibu_gt = ibuArr[0];
+  var ibu_lt = ibuArr[ibuArr.length - 1];
+
+
+  // BrewDog API
+  var queryURL = "https://api.punkapi.com/v2/beers/?abv_gt=" + abv_get + "&abv_lt=" + abv_lt + "&ebc_gt=" + ebc_gt + "&ebc_lt=" + ebc_lt + "&ibu_lt=" + ibu_lt + "&ibu-gt=" + ibu_gt; 
+
   $.ajax({
     url: queryURL,
     method: "GET"
