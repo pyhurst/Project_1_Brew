@@ -277,8 +277,9 @@ $(document).ready(function () {
         } else {
           var $cardImg = $("<div>");
           var googleLink = $("<a>");
-          googleLink.text("Google");
+          googleLink.text(" See Google");
           $(googleLink).attr("href", "https://www.google.com");
+          googleLink.attr("target", "_blank");
           $cardImg.append(googleLink);
           $cardDiv.append($cardImg);
         }
@@ -330,8 +331,9 @@ $(document).ready(function () {
         } else {
           var $cardImg = $("<div>");
           var googleLink = $("<a>");
-          googleLink.text("Google");
-          $(googleLink).attr("href", "https://www.google.com");
+          googleLink.text("See Google");
+          googleLink.attr("href", "https://www.google.com");
+          googleLink.attr("target", "_blank");
           $cardImg.append(googleLink);
           $cardDiv.append($cardImg);
         }
