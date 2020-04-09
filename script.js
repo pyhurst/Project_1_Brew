@@ -64,14 +64,19 @@ function dropdownColor() {
 // console.log($('#selection').val());
 if($('#selection').val() == 1){
   console.log('pale straw');
+  $('#color-display').attr('style', 'width: 50px; height: 50px; background-color: blue;');
 } else if ($('#selection').val() == 2){
   console.log('gold');
+  $('#color-display').attr('style', 'width: 50px; height: 50px; background-color: gold;');
 } else if ($('#selection').val() == 3){
   console.log('amber');
+  $('#color-display').attr('style', 'width: 50px; height: 50px; background-color: red;');
 } else if ($('#selection').val() == 4){
   console.log('deep brown');
-} else if ($('#selection').val() == 5){
+  $('#color-display').attr('style', 'width: 50px; height: 50px; background-color: brown;');
+} else {
   console.log('black');
+  $('#color-display').attr('style', 'width: 50px; height: 50px; background-color: green;');
 }
 }
 
