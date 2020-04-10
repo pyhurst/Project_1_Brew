@@ -289,7 +289,7 @@ $(document).ready(function () {
           var googleImg = $("<img>");
           var googleLink = $('<a>');
           var googleDiv = $('<div>');
-          var food = JSON.stringify(res.hints[0].food.label).split(' ').join('').replace('"', '');
+          var food = res.hints[0].food.label.split(' ').join('+');
           googleLink.text(" See Google");
           googleImg.attr("src", "./images/google-it.jpg");
           googleLink.attr("href", `https://www.google.com/search?q=${food}&rlz=1C1CHBF_enUS882US882&sxsrf=ALeKk02VMbJMBjEP2PYB65uMF5lnpXxx_A:1586523972450&source=lnms&tbm=isch&sa=X&ved=2ahUKEwihtbiu9t3oAhUHCc0KHZnmAw8Q_AUoAnoECA0QBA&biw=1920&bih=1089`);
@@ -302,7 +302,7 @@ $(document).ready(function () {
         // Adds AOS animation to the card
         $cardDiv.attr("data-aos", "fade-right");
         $cardDiv.attr("data-aos-offset", "300");
-        $cardDiv.attr("data-aos-duration", "2000");
+        $cardDiv.attr("data-aos-duration", "1500");
         label.attr("id", "card-name"); 
 
         img.addClass('activator');
@@ -372,7 +372,7 @@ $(document).ready(function () {
           var googleImg = $("<img>");
           var googleLink = $('<a>');
           var googleDiv = $('<div>');
-          var food = JSON.stringify(res.hints[0].food.label).split(' ').join('').replace('"', '');
+          var food = res.hints[0].food.label.split(' ').join('+');
           googleLink.text(" See Google");
           googleImg.attr("src", "./images/google-it.jpg");
           googleLink.attr("href", `https://www.google.com/search?q=${food}&rlz=1C1CHBF_enUS882US882&sxsrf=ALeKk02VMbJMBjEP2PYB65uMF5lnpXxx_A:1586523972450&source=lnms&tbm=isch&sa=X&ved=2ahUKEwihtbiu9t3oAhUHCc0KHZnmAw8Q_AUoAnoECA0QBA&biw=1920&bih=1089`);
@@ -384,9 +384,9 @@ $(document).ready(function () {
 
         $cardImg.addClass("card-image");
         // Adds AOS animation to the card
-        $cardDiv.attr("data-aos", "fade-right");
+        $cardDiv.attr("data-aos", "fade-left");
         $cardDiv.attr("data-aos-offset", "300");
-        $cardDiv.attr("data-aos-duration", "2000");
+        $cardDiv.attr("data-aos-duration", "1500");
         label.attr("id", "card-name"); 
 
         img.addClass('activator');
