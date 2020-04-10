@@ -115,7 +115,7 @@ $(document).ready(function () {
     //shades dropdown
     var colorChoice = $(".dropdown-trigger").val();
 
-    console.log(colorChoice);
+    // console.log(colorChoice);
     if (colorChoice === "Pale Straw") {
       var ebc_gt = $("#color1").attr("data-min");
       var ebc_lt = $("#color1").attr("data-max");
@@ -135,8 +135,8 @@ $(document).ready(function () {
 
     ebc_gt = parseInt(ebc_gt);
     ebc_lt = parseInt(ebc_lt);
-    console.log(ebc_gt);
-    console.log(ebc_lt);
+    // console.log(ebc_gt);
+    // console.log(ebc_lt);
 
     // bitterness checkboxes
     function sortArr(a, b) {
@@ -256,7 +256,7 @@ $(document).ready(function () {
       method: "GET",
     })
       .then(function (res) {
-        console.log(res);
+        // console.log(res);
         var $cardDiv = $("<div>");
         var $cardImg = $("<div>");
         var $cardContent = $("<div>").addClass("card-content");
@@ -278,7 +278,7 @@ $(document).ready(function () {
 
 
         $cardDiv.addClass("card");
-        console.log(imgURL);
+        // console.log(imgURL);
         if (typeof imgURL === "string") {
           var $cardImg = $("<div>");
           var imgURL = res.hints[0].food.image;
@@ -290,7 +290,6 @@ $(document).ready(function () {
           var googleLink = $('<a>');
           var googleDiv = $('<div>');
           var food = JSON.stringify(res.hints[0].food.label).split(' ').join('').replace('"', '');
-          console.log(food);
           googleLink.text(" See Google");
           googleImg.attr("src", "./images/google-it.jpg");
           googleLink.attr("href", `https://www.google.com/search?q=${food}&rlz=1C1CHBF_enUS882US882&sxsrf=ALeKk02VMbJMBjEP2PYB65uMF5lnpXxx_A:1586523972450&source=lnms&tbm=isch&sa=X&ved=2ahUKEwihtbiu9t3oAhUHCc0KHZnmAw8Q_AUoAnoECA0QBA&biw=1920&bih=1089`);
@@ -374,7 +373,6 @@ $(document).ready(function () {
           var googleLink = $('<a>');
           var googleDiv = $('<div>');
           var food = JSON.stringify(res.hints[0].food.label).split(' ').join('').replace('"', '');
-          console.log(food);
           googleLink.text(" See Google");
           googleImg.attr("src", "./images/google-it.jpg");
           googleLink.attr("href", `https://www.google.com/search?q=${food}&rlz=1C1CHBF_enUS882US882&sxsrf=ALeKk02VMbJMBjEP2PYB65uMF5lnpXxx_A:1586523972450&source=lnms&tbm=isch&sa=X&ved=2ahUKEwihtbiu9t3oAhUHCc0KHZnmAw8Q_AUoAnoECA0QBA&biw=1920&bih=1089`);
