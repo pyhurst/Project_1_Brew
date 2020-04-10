@@ -97,6 +97,10 @@ div.noUi-connect {
   #dessert-display {
     width: 100%;
   }
+
+  #color-display {
+    margin: 0 auto;
+  }
 }
 
 #error-message {
