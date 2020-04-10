@@ -15,12 +15,9 @@ $(document).ready(function () {
   });
 
   $(".noUi-handle").on("mouseup", function () {
-    //   // var slider = $("#slider");
     var sliderMin = $(".noUi-handle-lower").attr("aria-valuenow");
     var sliderMax = $(".noUi-handle-upper").attr("aria-valuenow");
     var percentOnpage = $("#percent-range");
-    // console.log(sliderMin);
-    // console.log(sliderMax);
     percentOnpage.text(sliderMin + "%" + " min and " + sliderMax + "% max.");
   });
 
@@ -409,15 +406,6 @@ $(document).ready(function () {
         cardReveal.append(nutritionInfo);
         nutritionInfo.append(nutritionCard);
         nutritionCard.append("calories: " + calories + " KCAL, protein: " + protein + "g, fiber: " + fiber + "g, carbs: " + carbs + "g, " + "fats: " + fats);
-
-
-
-
-
-
-
-
-
         $("#dessert-display").append($cardDiv);
       })
       .catch(function () {
