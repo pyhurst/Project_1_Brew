@@ -289,10 +289,11 @@ $(document).ready(function () {
           var googleImg = $("<img>");
           var googleLink = $('<a>');
           var googleDiv = $('<div>');
+          var food = JSON.stringify(res.hints[0].food.label).split(' ').join('').replace('"', '');
+          console.log(food);
           googleLink.text(" See Google");
           googleImg.attr("src", "./images/google-it.jpg");
-          googleImg.attr("href", "https://wwww.google.com");
-
+          googleLink.attr("href", `https://www.google.com/search?q=${food}&rlz=1C1CHBF_enUS882US882&sxsrf=ALeKk02VMbJMBjEP2PYB65uMF5lnpXxx_A:1586523972450&source=lnms&tbm=isch&sa=X&ved=2ahUKEwihtbiu9t3oAhUHCc0KHZnmAw8Q_AUoAnoECA0QBA&biw=1920&bih=1089`);
           $cardImg.append(googleImg);
           $cardDiv.append($cardImg);
           googleDiv.append(googleLink);
@@ -372,10 +373,11 @@ $(document).ready(function () {
           var googleImg = $("<img>");
           var googleLink = $('<a>');
           var googleDiv = $('<div>');
+          var food = JSON.stringify(res.hints[0].food.label).split(' ').join('').replace('"', '');
+          console.log(food);
           googleLink.text(" See Google");
           googleImg.attr("src", "./images/google-it.jpg");
-          googleImg.attr("href", "https://wwww.google.com");
-
+          googleLink.attr("href", `https://www.google.com/search?q=${food}&rlz=1C1CHBF_enUS882US882&sxsrf=ALeKk02VMbJMBjEP2PYB65uMF5lnpXxx_A:1586523972450&source=lnms&tbm=isch&sa=X&ved=2ahUKEwihtbiu9t3oAhUHCc0KHZnmAw8Q_AUoAnoECA0QBA&biw=1920&bih=1089`);
           $cardImg.append(googleImg);
           $cardDiv.append($cardImg);
           googleDiv.append(googleLink);
