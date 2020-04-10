@@ -289,12 +289,18 @@ $(document).ready(function () {
           $cardDiv.append($cardImg);
         } else {
           var $cardImg = $("<div>");
-          var googleLink = $("<a>");
+          var googleImg = $("<img>");
+          var googleLink = $('<a>');
+          var googleDiv = $('<div>');
           googleLink.text(" See Google");
-          $(googleLink).attr("href", "https://www.google.com");
-          googleLink.attr("target", "_blank");
-          $cardImg.append(googleLink);
+          googleLink.attr('href', 'https://www.google.com');
+          googleImg.attr("src", "./images/google-it.jpg");
+          googleImg.attr("href", "https://wwww.google.com");
+
+          $cardImg.append(googleImg);
           $cardDiv.append($cardImg);
+          googleDiv.append(googleLink);
+          $cardContent.append(googleDiv);
         }
         $cardImg.addClass("card-image");
         // Adds AOS animation to the card
@@ -367,12 +373,18 @@ $(document).ready(function () {
           $cardDiv.append($cardImg);
         } else {
           var $cardImg = $("<div>");
-          var googleLink = $("<a>");
-          googleLink.text("See Google");
-          googleLink.attr("href", "https://www.google.com");
-          googleLink.attr("target", "_blank");
-          $cardImg.append(googleLink);
+          var googleImg = $("<img>");
+          var googleLink = $('<a>');
+          var googleDiv = $('<div>');
+          googleLink.text(" See Google");
+          googleLink.attr('href', 'https://www.google.com');
+          googleImg.attr("src", "./images/google-it.jpg");
+          googleImg.attr("href", "https://wwww.google.com");
+
+          $cardImg.append(googleImg);
           $cardDiv.append($cardImg);
+          googleDiv.append(googleLink);
+          $cardContent.append(googleDiv);
         }
 
         $cardImg.addClass("card-image");

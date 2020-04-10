@@ -102,3 +102,7 @@ div.noUi-connect {
 #error-message {
   margin-top: 5px;
 }
+
+.material-icons {
+  cursor: pointer;
+}
