@@ -9,11 +9,11 @@ Phil Hurst, Emily Resch, Peter Blank
 ## Technologies used
 * Materialize framework for CSS
 * Punk API
-* Edamame API
+* Edamam API
 * Animate On Scroll Library
 
 
-We linked our page to the Materialize CDN so that we could set up our page in grid format and use some of the features provided by the framwork. Our site includes a slider, dropdown, and checkboxes all thanks to the css framework. To call beer choices for the user we used Punk API, a free and open source API that has a wide selection of Brewdog's beers in it's database. There is no authenticaiton required to use the API, and they set limits from IP addresses with a rate limit of 3600 requests per hour. When the user searches for their beer, the data returned is put into an AJAX call to grab recommended food items from the Edamame API. 
+We linked our page to the Materialize CDN so that we could set up our page in grid format and use some of the features provided by the framwork. Our site includes a slider, dropdown, and checkboxes all thanks to the css framework. To call beer choices for the user we used Punk API, a free and open source API that has a wide selection of Brewdog's beers in it's database. There is no authenticaiton required to use the API, and they set limits from IP addresses with a rate limit of 3600 requests per hour. When the user searches for their beer, the data returned is put into an AJAX call to grab recommended food items from the Edamam API. 
 
 <hr>
 
@@ -35,7 +35,7 @@ We created a web page for users to find different beers based on their preferenc
 
 
 ## Food Selection
-We used the data from Punk API as paramters in an AJAX call to the Edamame API, to make food selections that go well with the suggested beer.
+We used the data from Punk API as paramters in an AJAX call to the Edamam API, to make food selections that go well with the suggested beer.
 
 
 <img src="images/foodsuggestions.png" width=450>
