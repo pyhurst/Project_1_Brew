@@ -4,7 +4,7 @@ Phil Hurst, Emily Resch, Peter Blank
 
 
 
-<img src="images/TBONTB.png" width = 450>
+<img src="images/TBONTB.png" width = 450> 
 
 ## Technologies used
 * Materialize framework for CSS
@@ -44,6 +44,6 @@ We used the data from Punk API as paramters in an AJAX call to the Edamam API, t
 As a helpful tip, Brewdog has a larger selection of beers with higher IBUs and darker shades, and the user will have more fun looking up some brew using these paramters. Cheers!
 
 
-
+<img src="images/dog.gif" width= 250>       
 
 
