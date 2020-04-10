@@ -290,7 +290,6 @@ $(document).ready(function () {
           var googleLink = $('<a>');
           var googleDiv = $('<div>');
           googleLink.text(" See Google");
-          googleLink.attr('href', 'https://www.google.com');
           googleImg.attr("src", "./images/google-it.jpg");
           googleImg.attr("href", "https://wwww.google.com");
 
@@ -374,7 +373,6 @@ $(document).ready(function () {
           var googleLink = $('<a>');
           var googleDiv = $('<div>');
           googleLink.text(" See Google");
-          googleLink.attr('href', 'https://www.google.com');
           googleImg.attr("src", "./images/google-it.jpg");
           googleImg.attr("href", "https://wwww.google.com");
 
