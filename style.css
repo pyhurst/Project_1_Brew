@@ -97,8 +97,20 @@ div.noUi-connect {
   #dessert-display {
     width: 100%;
   }
+
+  #color-display {
+    margin: 0 auto;
+  }
 }
 
 #error-message {
   margin-top: 5px;
+}
+
+.material-icons {
+  cursor: pointer;
+}
+
+.noUi-touch-area{
+  cursor: pointer;
 }

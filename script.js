@@ -15,12 +15,9 @@ $(document).ready(function () {
   });
 
   $(".noUi-handle").on("mouseup", function () {
-    //   // var slider = $("#slider");
     var sliderMin = $(".noUi-handle-lower").attr("aria-valuenow");
     var sliderMax = $(".noUi-handle-upper").attr("aria-valuenow");
     var percentOnpage = $("#percent-range");
-    // console.log(sliderMin);
-    // console.log(sliderMax);
     percentOnpage.text(sliderMin + "%" + " min and " + sliderMax + "% max.");
   });
 
@@ -289,12 +286,17 @@ $(document).ready(function () {
           $cardDiv.append($cardImg);
         } else {
           var $cardImg = $("<div>");
-          var googleLink = $("<a>");
+          var googleImg = $("<img>");
+          var googleLink = $('<a>');
+          var googleDiv = $('<div>');
           googleLink.text(" See Google");
-          $(googleLink).attr("href", "https://www.google.com");
-          googleLink.attr("target", "_blank");
-          $cardImg.append(googleLink);
+          googleImg.attr("src", "./images/google-it.jpg");
+          googleImg.attr("href", "https://wwww.google.com");
+
+          $cardImg.append(googleImg);
           $cardDiv.append($cardImg);
+          googleDiv.append(googleLink);
+          $cardContent.append(googleDiv);
         }
         $cardImg.addClass("card-image");
         // Adds AOS animation to the card
@@ -367,12 +369,17 @@ $(document).ready(function () {
           $cardDiv.append($cardImg);
         } else {
           var $cardImg = $("<div>");
-          var googleLink = $("<a>");
-          googleLink.text("See Google");
-          googleLink.attr("href", "https://www.google.com");
-          googleLink.attr("target", "_blank");
-          $cardImg.append(googleLink);
+          var googleImg = $("<img>");
+          var googleLink = $('<a>');
+          var googleDiv = $('<div>');
+          googleLink.text(" See Google");
+          googleImg.attr("src", "./images/google-it.jpg");
+          googleImg.attr("href", "https://wwww.google.com");
+
+          $cardImg.append(googleImg);
           $cardDiv.append($cardImg);
+          googleDiv.append(googleLink);
+          $cardContent.append(googleDiv);
         }
 
         $cardImg.addClass("card-image");
@@ -397,15 +404,6 @@ $(document).ready(function () {
         cardReveal.append(nutritionInfo);
         nutritionInfo.append(nutritionCard);
         nutritionCard.append("calories: " + calories + " KCAL, protein: " + protein + "g, fiber: " + fiber + "g, carbs: " + carbs + "g, " + "fats: " + fats);
-
-
-
-
-
-
-
-
-
         $("#dessert-display").append($cardDiv);
       })
       .catch(function () {
