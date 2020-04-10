@@ -69,10 +69,16 @@ div.noUi-connect {
   /* border: 1px dotted wheat; */
   text-align: end;
 }
+/*search button*/
 
 .btn {
   background-color: rgb(255, 114, 38);
 }
+
+.btn:hover {
+  background-color: black;
+}
+
 
 @media only screen and (max-width: 600px) {
   #beer-input {
