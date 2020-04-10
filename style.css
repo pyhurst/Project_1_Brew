@@ -106,3 +106,7 @@ div.noUi-connect {
 .material-icons {
   cursor: pointer;
 }
+
+.noUi-touch-area{
+  cursor: pointer;
+}
