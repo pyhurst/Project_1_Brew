@@ -63,35 +63,36 @@ $(document).ready(function () {
   });
 
   // Dropdown Color Change
+  const backgroundColor = "";
   $(".input-field").change(dropdownColor);
   function dropdownColor() {
     // console.log($('#selection').val());
     if ($("#selection").val() == 1) {
-      // console.log('pale straw');
+      document.body.style.backgroundColor = "rgb(252, 234, 111, 0.3)";
       $("#color-display").attr(
         "style",
         "width: 100%; height: 50px; background-color: rgb(252, 234, 111);"
       );
     } else if ($("#selection").val() == 2) {
-      // console.log('gold');
+      document.body.style.backgroundColor = "rgb(232, 163, 2, 0.3)";
       $("#color-display").attr(
         "style",
         "width: 100%; height: 50px; background-color: rgb(232, 163, 2);"
       );
     } else if ($("#selection").val() == 3) {
-      // console.log('amber');
+      document.body.style.backgroundColor = "rgb(191, 80, 0, 0.3)";
       $("#color-display").attr(
         "style",
         "width: 100%; height: 50px; background-color: rgb(191, 80, 0);"
       );
     } else if ($("#selection").val() == 4) {
-      // console.log('deep brown');
+      document.body.style.backgroundColor = "rgb(115, 57, 16, 0.3)";
       $("#color-display").attr(
         "style",
         "width: 100%; height: 50px; background-color: rgb(115, 57, 16);"
       );
     } else {
-      // console.log('black');
+      document.body.style.backgroundColor = "rgb(38, 16, 1, 0.3)";
       $("#color-display").attr(
         "style",
         "width: 100%; height: 50px; background-color: rgb(38, 16, 1);"

@@ -6,6 +6,10 @@
   font-family: "Bebas Neue", cursive;
 }
 
+body{
+  background-color: rgb(233, 183, 76, 0.7);
+}
+
 /* Heading */
 header {
   text-align: center;
